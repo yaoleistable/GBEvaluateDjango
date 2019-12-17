@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>绿色建筑标准库</title>
+</head>
+<body>
+<ul id="cate_box" class="lf">
+    {% for list in name_note_list %}
+        <li>
+            <span>{{ list.name }}</span> &nbsp;&nbsp;<span>{{ list.note }}</span>
+        </li>
+    {% endfor %}
+</ul>
+</body>
+</html>

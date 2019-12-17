@@ -5,11 +5,17 @@
 @time: 2019/12/13 16:13
 """
 # index的urls
-from django.urls import path,re_path
+from django.urls import path, re_path
+
 from . import views
 
 urlpatterns = [
-    path('', views.index),
+    path('', views.login),
+    path('index.html', views.index),
+    # path('login.html', views.login),
+    path('standard_view.html', views.StandardList.as_view()),
+    path('standard.html', views.standard),
+    path('download.html', views.download),
     # 添加带有字符类型、整型和slug的URL
     # path('<year>/<int:month>/<slug:day>', views.mydate),
     # 使用正则表达式，对输入内容进行限制

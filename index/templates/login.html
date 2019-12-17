@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!--如使用在线的bulma,href="../css/bulma.css",href替换为：href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.8.0/css/bulma.css"-->
+    <link rel="stylesheet" href="../static/css/bulma.css">
+    <!--图标icons、logos、字体，使用如下script-->
+    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+    <title>用户登录界面</title>
+</head>
+<body>
+<section class="section">
+    <div class="notification is-info has-text-centered">
+        绿色建筑评估系统
+    </div>
+    <div class="field">
+        <label class="label">用户名</label>
+        <div class="control">
+            <input class="input is-success" name="user_name" type="text" placeholder="用户名"
+                   value="{{ user_name }}">
+        </div>
+    </div>
+    <div class="field">
+        <label class="label">密 码</label>
+        <div class="control has-icons-left has-icons-right">
+            <input class="input is-success" name="password" type="password">
+        </div>
+    </div>
+    <div class="field is-grouped is-grouped-centered">
+        <div class="control">
+            <button class="button is-link" type="submit">登录</button>
+        </div>
+        <div class="control">
+            <button class="button is-link is-right" type="reset">取消</button>
+        </div>
+    </div>
+    <footer class="footer  has-background-grey-lighter">
+        <div class="content has-text-centered">
+            <p>筑博设计股份有限公司</p>
+        </div>
+    </footer>
+</section>
+
+</body>
+</html>

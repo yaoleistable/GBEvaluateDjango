@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     # 用户创建的App，需添加到这里
     'index',
     'user',
+    'project',
 ]
 
 # 中间件
@@ -144,4 +145,4 @@ STATIC_URL = '/static/'
 
 # 设置根目录的静态文件资源文件夹public_static，设置App(index)的静态资源文件夹index_static
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'public_static'),
-                    os.path.join(BASE_DIR, 'index/index_static'), ]
+                    os.path.join(BASE_DIR, 'index/static'), ]
