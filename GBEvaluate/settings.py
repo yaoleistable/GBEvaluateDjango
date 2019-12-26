@@ -11,10 +11,14 @@ https://docs.djangoproject.com/en/2.2/ref/settings/
 """
 
 import os
+import sys
 
 # 项目路径，项目创建时生成，不用修改
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+
+# 把apps文件夹放入根目录
+sys.path.insert(0, os.path.join(BASE_DIR, 'apps'))
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/2.2/howto/deployment/checklist/
@@ -44,9 +48,10 @@ INSTALLED_APPS = [
 
     # 用户创建的App，需添加到这里
     'index',
-    'user',
-    'project',
+    'users'
 ]
+# 重载方法
+AUTH_USER_MODEL = "users.UserProfile"
 
 # 中间件
 MIDDLEWARE = [
@@ -69,7 +74,7 @@ ROOT_URLCONF = 'GBEvaluate.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',  # 定义模板引擎
-        'DIRS': [os.path.join(BASE_DIR, 'templates'), os.path.join(BASE_DIR, 'index/templates')]
+        'DIRS': [os.path.join(BASE_DIR, 'templates'), os.path.join(BASE_DIR, 'apps/index/templates')]
         ,  # 设置模板所在路径
         'APP_DIRS': True,  # 是否在App里面查找模板文件
         'OPTIONS': {
@@ -127,15 +132,20 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/2.2/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+# 语言切换为汉语
+# LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'zh-hans'
 
-TIME_ZONE = 'UTC'
+# 修改时区为中国上海
+# TIME_ZONE = 'UTC'
+TIME_ZONE = 'Asia/Shanghai'
 
 USE_I18N = True
 
 USE_L10N = True
 
-USE_TZ = True
+# USE_TZ = True
+USE_TZ = False
 
 # 静态文件存放与配置
 # Static files (CSS, JavaScript, Images)
@@ -144,5 +154,5 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 # 设置根目录的静态文件资源文件夹public_static，设置App(index)的静态资源文件夹index_static
-STATICFILES_DIRS = [os.path.join(BASE_DIR, 'public_static'),
-                    os.path.join(BASE_DIR, 'index/static'), ]
+STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static'),
+                    os.path.join(BASE_DIR, 'apps/index/static'), ]
