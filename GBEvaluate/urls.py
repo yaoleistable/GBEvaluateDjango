@@ -16,8 +16,10 @@ Including another URLconf
 # 根目录的urls
 from django.contrib import admin  # 导入admin功能模块
 from django.urls import path, include
+import xadmin
 
 urlpatterns = [
     path('admin/', admin.site.urls),  # Admin站点管理
+    path('xadmin/', xadmin.site.urls),  # xadmin站点管理
     path('', include('index.urls'))  # 定义首页地址
 ]
