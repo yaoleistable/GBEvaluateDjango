@@ -18,8 +18,10 @@ from django.contrib import admin  # 导入admin功能模块
 from django.urls import path, include
 import xadmin
 
+
 urlpatterns = [
     # path('admin/', admin.site.urls),  # Admin站点管理
     path('xadmin/', xadmin.site.urls),  # Admin站点管理
-    path('', include('index.urls'))  # 定义首页地址
+    path('', include('index.urls')),  # 定义首页地址
+    path('users/', include('users.urls'))  # 注册App的URL
 ]

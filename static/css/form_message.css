@@ -1,0 +1,59 @@
+html, body {
+    font-family: 'Questrial', sans-serif;
+    font-size: 14px;
+    font-weight: 300;
+}
+
+.hero.is-success {
+    background: #f2f6fa;
+}
+
+.hero .nav .hero.is-success .nav {
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+
+.box {
+    margin-top: 5rem;
+}
+
+input {
+    font-weight: 300;
+}
+
+p {
+    font-weight: 700;
+}
+
+p.subtitle {
+    padding-top: 1rem;
+}
+
+.login-hr {
+    border-bottom: 1px solid black;
+}
+
+.has-text-black {
+    color: black;
+}
+
+.field {
+    padding-bottom: 10px;
+}
+
+.fa {
+    margin-left: 5px;
+}
+
+.smart-green {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 500px;
+    background: #ffffff;
+    padding: 30px 30px 30px 30px;
+    font: 16px Arial, Helvetica, sans-serif;
+    color: #666;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+}

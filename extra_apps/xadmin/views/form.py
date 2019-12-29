@@ -26,7 +26,7 @@ class FormAdminView(CommAdminView):
     title = None
     readonly_fields = ()
 
-    form_template = 'xadmin/views/form.html'
+    form_template = 'xadmin/views/form_message.html'
 
     form_layout = None
 

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>用户留言</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet"> -->
+    <link href="https://fonts.googleapis.com/css?family=Questrial&display=swap" rel="stylesheet">
+
+    <!-- Bulma Version 0.8.x-->
+    <!--如使用在线的bulma,href="../css/bulma.css",href替换为：href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.8.0/css/bulma.css"-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.8.0/css/bulma.css">
+    <link rel="stylesheet" type="text/css" href="../static/css/form_message.css">
+
+    <!--图标icons、logos、字体，使用如下script-->
+    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+
+</head>
+<body>
+<section class="hero is-success is-fullheight">
+    <div class="hero-body">
+        <div class="container">
+            <div class="column is-4 is-offset-4">
+                <div class="box">
+                    <form action=" " method="post" class="smart-green">{% csrf_token %}
+                        <h3 class="title has-text-black has-text-centered">留言信息</h3>
+                        <hr class="login-hr">
+                        <p class="subtitle has-text-centered has-text-black">请留下你的信息</p>
+                        <div class="field">
+                            <label class="label">姓名:</label>
+                            <div class="control">
+                                <input id="name" class="input is-primary is-focused" name="name"
+                                       value="{{ my_message.name }}" type="text"
+                                       placeholder="请输入您的姓名">
+                            </div>
+                        </div>
+                        <div class="field">
+                            <label class="label">邮箱:</label>
+                            <div class="control">
+                                <div class="control">
+                                    <input id="email" class="input is-primary" name="email"
+                                           value="{{ my_message.email }}" type="email"
+                                           placeholder="请输入邮箱地址">
+                                </div>
+                            </div>
+                            <div class="field">
+                                <label class="label">联系地址:</label>
+                                <div class="control">
+                                    <input id="address" class="input  is-primary" name="address" type="text"
+                                           placeholder="请输入联系地址">
+                                </div>
+                            </div>
+                            <div class="field">
+                                <label class="label">留言:</label>
+                                <div class="control">
+                                    <input id="message" class="input is-primary" name="message" type="text"
+                                           placeholder="请输入你的建议">
+                                </div>
+                            </div>
+                            <div class="field is-grouped is-grouped-centered">
+                                <div class="control">
+                                    <button type="submit" class="button is-block is-link  is-fullheight is-info">提交
+                                    </button>
+                                </div>
+                            </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script async type="text/javascript" src="../static/js/bulma.js"></script>
+</body>
+</html>

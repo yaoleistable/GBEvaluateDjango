@@ -1,6 +1,5 @@
-from django.db import models
-
 from django.contrib.auth.models import AbstractUser
+from django.db import models
 
 
 # Create your models here.
@@ -24,3 +23,17 @@ class UserProfile(AbstractUser):
 
     def __str__(self):
         return self.username
+
+
+class UserMessage(models.Model):
+    name = models.CharField(max_length=50, verbose_name="姓名")
+    email = models.EmailField(verbose_name="邮箱")
+    address = models.CharField(max_length=100, verbose_name="地址")
+    message = models.CharField(max_length=500, verbose_name="留言信息")
+
+    class Meta:
+        verbose_name = "用户留言信息"
+        verbose_name_plural = verbose_name
+
+    def __str__(self):
+        return self.name
